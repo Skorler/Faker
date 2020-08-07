@@ -11,7 +11,7 @@ public class Main {
             Faker faker = new Faker(new Locale(language));
             if (args.length > 2 && isNumber(args[2])) {
                 mistakes = Double.parseDouble(args[2]);
-            } else System.out.println("Wrong amount of mistakes");
+            } else if (args.length >2 && !isNumber(args[2])) { System.out.println("Wrong amount of mistakes"); System.exit(0);}
             if (mistakes == 0) {
                 for (int i = 0; i < n; i++) {
                     System.out.println(generateContact(faker));

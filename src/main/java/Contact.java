@@ -58,8 +58,8 @@ public class Contact {
     }
 
     public String exchangeChar(StringBuilder sb, Random random) {
-        int position = random.nextInt(sb.length());
-        char temp = sb.charAt(random.nextInt(sb.length()));
+        int position = random.nextInt(sb.length()-1);
+        char temp = sb.charAt(position);
         sb.setCharAt(position, sb.charAt(position+1));
         sb.setCharAt(position+1, temp);
         return sb.toString();
