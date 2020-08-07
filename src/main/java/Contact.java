@@ -22,15 +22,16 @@ public class Contact {
         Random random = new Random();
         StringBuilder sb = new StringBuilder(s);
         for (int i = 0; i < round; i++) {
-            int r = random.nextInt(100);
-            if (r <= 32) {
-                s = deleteChar(sb, random);
-            }
-            else if (r <= 66) {
-                s = addChar(sb, language, random);
-            }
-            else {
-                s = exchangeChar(sb, random);
+            switch (random.nextInt(3)) {
+                case 0:
+                    s = deleteChar(sb, random);
+                    break;
+                case 1:
+                    s = addChar(sb, language, random);
+                    break;
+                case 2:
+                    s = exchangeChar(sb, random);
+                    break;
             }
         }
         return s;
